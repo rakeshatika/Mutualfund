@@ -64,11 +64,12 @@ public class AuthController {
 
         // ✅ Generate token
         String token = jwtUtil.generateToken(user.getEmail());
-
+        System.out.println("token: "+token);
+        
         // ✅ Send token in response
         Map<String, String> response = new HashMap<>();
         response.put("token", token);
-
+        
         return ResponseEntity.ok(response);
     }
 }
